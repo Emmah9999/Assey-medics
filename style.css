@@ -1,0 +1,387 @@
+/* Reset some defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Full-screen body with background image + overlay */
+html, body {
+  height: 100%;
+}
+
+body {
+  background: url("body-image.jpg") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+
+/* Overlay for body */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: -1;
+}
+
+/* Nav (header) with different background image + overlay */
+nav {
+  background: url("header-image.jpg") no-repeat center center/cover;
+  position: relative;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+/* Overlay for header */
+nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 0;
+}
+
+/* Ensure nav text stays above overlay */
+nav * {
+  position: relative;
+  z-index: 1;
+}
+
+nav h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+/* Nav links */
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+nav ul li a.active-nav {
+  text-decoration: underline;
+  color: #ffdd00;
+}
+
+/* Hamburger menu button */
+.menu-btn {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  z-index: 101; /* juu ya menu */
+}
+
+/* Mobile nav menu */
+nav ul {
+  transition: all 0.3s ease-in-out;
+}
+
+@media(max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 20px 0;
+    background: url("menu-bg.jpg") no-repeat center center/cover;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  nav ul li a {
+    font-size: 1.1rem;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  /* Overlay for mobile menu links readability */
+  nav ul::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: -1;
+  }
+
+  body {
+    background-position: center top;
+  }
+
+  nav {
+    background-position: center top;
+  }
+}
+
+/* Lesson Section */
+.lesson {
+  padding: 20px;
+  text-align: center;
+}
+
+.lesson h1 {
+  color: green;
+}
+
+/* Login */
+.login-container {
+  max-width: 350px;
+  margin: 100px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.2);
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background: #0077b6;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background: #023e8a;
+}
+
+/* Get Doc Section */
+.doc-section {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 25px 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.doc-section h1 {
+  margin-bottom: 20px;
+  color: #0077b6;
+}
+
+/* Form */
+form#docForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+form#docForm label {
+  flex-basis: 100%;
+  font-weight: bold;
+}
+
+form#docForm select {
+  padding: 8px 12px;
+  flex: 1 1 45%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form#docForm button {
+  padding: 10px 20px;
+  background: #0077b6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-basis: 100%;
+  transition: 0.3s;
+}
+
+form#docForm button:hover {
+  background: #023e8a;
+}
+
+/* Category buttons */
+#categoryOptions {
+  margin-bottom: 20px;
+}
+
+#categoryOptions button {
+  padding: 8px 16px;
+  margin: 5px 5px 5px 0;
+  border: none;
+  border-radius: 5px;
+  background: #eee;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#categoryOptions button:hover {
+  background: #0077b6;
+  color: #fff;
+}
+
+#categoryOptions button.active {
+  background: #0077b6;
+  color: #fff;
+}
+
+/* Document list */
+#docResults ul {
+  list-style: none;
+  padding: 0;
+}
+
+#docResults ul li {
+  margin-bottom: 12px;
+  background: #f0f4ff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#docResults ul li a.btn {
+  margin-left: 10px;
+  background: #0077b6;
+  color: white;
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+#docResults ul li a.btn:hover {
+  background: #023e8a;
+}
+
+/* Card Layout */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  padding: 20px;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+  color: #0077b6;
+  font-size: 1.3rem;
+}
+
+.card p, .card ul {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card ul li {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* Feedback form card */
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feedback-form input,
+.feedback-form textarea,
+.feedback-form button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+.feedback-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.feedback-form button {
+  background: #0077b6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.feedback-form button:hover {
+  background: #023e8a;
+}
+
+/* Smaller screens */
+@media(max-width: 600px) {
+  .card-container {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Documents - ASSEY MEDICAL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="dashboard" onload="requireLogin()">
+
+<nav>
+  <h2>ASSEY MEDICAL</h2>
+  <div class="menu-btn" id="menuBtn">&#9776;</div> <!-- Hamburger icon -->
+  <ul id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="dashboard.html">Get Doc</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="#" onclick="logout()">Logout</a></li>
+  </ul>
+</nav>
+
+
+  <section class="doc-section">
+    <h1>Choose Course & Level</h1>
+    <form id="docForm">
+      <label>Course:</label>
+      <select id="course" required>
+        <option value="">--Select--</option>
+        <option>Nursing</option>
+        <option>Pharmacist</option>
+        <option>Clinical Officer</option>
+        <option>Doctor</option>
+        <option>Medical Attendant</option>
+      </select>
+
+      <label>Level:</label>
+      <select id="level" required>
+        <option value="">--Select--</option>
+        <option>Year 1</option>
+        <option>Year 2</option>
+        <option>Year 3</option>
+      </select>
+
+      <button type="submit">View Documents</button>
+    </form>
+
+    <div id="categoryOptions"></div>
+    <div id="docResults"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

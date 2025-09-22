@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ASSEY MEDICAL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="home" onload="requireLogin(true)">
+
+  <nav>
+  <h2>ASSEY MEDICAL</h2>
+  <div class="menu-btn" id="menuBtn">&#9776;</div> <!-- Hamburger icon -->
+  <ul id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="dashboard.html">Get Doc</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="#" onclick="logout()">Logout</a></li>
+  </ul>
+</nav>
+
+
+  <section class="lesson">
+    <h1>Daily Lesson</h1>
+    <p>Hapa utapata somo jipya kila siku kulingana na course za afya.</p>
+    <div id="todayLesson">
+      <h3>Example: Anatomy Basics</h3>
+      <p>Introduction to human anatomy and physiology...</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

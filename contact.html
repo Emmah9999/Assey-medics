@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - ASSEY MEDICAL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="contact" onload="requireLogin()">
+
+  <nav>
+  <h2>ASSEY MEDICAL</h2>
+  <div class="menu-btn" id="menuBtn">&#9776;</div> <!-- Hamburger icon -->
+  <ul id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="dashboard.html">Get Doc</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="#" onclick="logout()">Logout</a></li>
+  </ul>
+</nav>
+
+
+<section class="lesson">
+  <h1>Contact Us</h1>
+  <div class="card-container">
+    
+    <!-- Info Card -->
+    <div class="card">
+      <h2>Email</h2>
+      <p>asseymedical@gmail.com</p>
+      <h2>Phone / WhatsApp</h2>
+      <p>+255 794 318 660</p>
+      <h2>Location</h2>
+      <p>Tanzania</p>
+    </div>
+
+    <!-- Feedback Form Card -->
+    <div class="card">
+      <h2>Send us a Message</h2>
+      <form id="feedbackForm" class="feedback-form">
+        <input type="text" id="fb_name" name="name" placeholder="Your Name" required>
+        <input type="email" id="fb_email" name="email" placeholder="Your Email" required>
+        <textarea id="fb_message" name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+  <script src="script.js"></script>
+</body>
+</html>
